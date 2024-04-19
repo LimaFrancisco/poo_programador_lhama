@@ -1,5 +1,5 @@
 from typing import Dict, Type
-from models import Repositorio
+from models.repository import Repositorio
 
 class Insersor:
 
@@ -7,7 +7,7 @@ class Insersor:
         self.__repo = repositorio
 
     def inserir_dado(self, nome: str, idade: int) -> Dict:
-        registro = self.__repo.select(nome, idade)
+        registro = self.__repo.select(nome)
         if registro:
             raise Exception("O Registro Ja Existe")
         
